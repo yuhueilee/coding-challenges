@@ -22,11 +22,14 @@ class Solution:
             List[int]: start and end index
         
         Time complexity:
-            Best O(logN)
-            Worst O(logN)
+            Best O(logN) for binary search
+            Worst O(logN) for binary search
             where N is the number of elements in the nums array
 
         Space complexity:
+            Best O(N) for the input array
+            Worst O(N) for the input array
+            where N is the number of elements in the nums array
         """
         start, end = -1, -1
         # find the first index of target in nums array
