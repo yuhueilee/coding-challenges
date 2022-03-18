@@ -34,7 +34,8 @@ class Solution:
             u = discovered.pop()
             u.visited = True
             for v in u.edges:
-                discovered.push(v)
+                if not v.visited:
+                    discovered.push(v)
 
     def createGraph(self, grid: List[List[str]]):
         vertices = []
@@ -51,11 +52,12 @@ class Solution:
             for j in range(n):
                 id = n * i + j
                 u = vertices[id]
-                adjacent = [n * (i-1) + j, n * (i+1) + j,
-                            n * i + (j-1), n * i + (j+1)]
+                adjacent = [(i - 1, j), (i + 1, j),
+                            (i, j - 1), (i, j + 1)]
                 for k in range(len(adjacent)):
-                    vertex_id = adjacent[k]
-                    if vertex_id > 0 and vertex_id < len(vertices):
+                    coord = adjacent[k]
+                    if 0 <= coord[0] <= (m - 1) and 0 <= coord[1] <= (n - 1):
+                        vertex_id = n * coord[0] + coord[1]
                         v = vertices[vertex_id]
                         u.edges.append(v)
 
