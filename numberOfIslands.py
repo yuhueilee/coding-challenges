@@ -59,7 +59,9 @@ class Solution:
                     if 0 <= coord[0] <= (m - 1) and 0 <= coord[1] <= (n - 1):
                         vertex_id = n * coord[0] + coord[1]
                         v = vertices[vertex_id]
-                        u.edges.append(v)
+                        # Only create edge if it's a land
+                        if v.val == 1:
+                            u.edges.append(v)
 
         return vertices
 
@@ -111,9 +113,9 @@ class Stack:
 
 sol = Solution()
 grid = [
-    ["1", "1", "1", "1", "0"],
-    ["1", "1", "0", "1", "0"],
+    ["1", "1", "0", "0", "0"], 
     ["1", "1", "0", "0", "0"],
-    ["0", "0", "0", "0", "0"]
+    ["0", "0", "1", "0", "0"],
+    ["0", "0", "0", "1", "1"]
 ]
 print(sol.numIslands(grid))
