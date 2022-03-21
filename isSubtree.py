@@ -17,6 +17,24 @@ from typing import Optional
 
 class Solution:
     def isSubtree(self, root, subRoot) -> bool:
+        """Find whether the subRoot is a subtree of root
+
+        Args:
+            root (TreeNode): a node
+            subRoot (TreeNode): a node
+
+        Returns:
+            bool: whether the subRoot is a subtree of root
+        
+        Time complexity:
+            Best O(N) when all nodes in root has a different value from all nodes in sub root
+            Worst O(NM) since at each node we check if the subtree is found or not
+            where N is the number of nodes in root and M is the number of nodes in sub root
+
+        Space complexity:
+            Best and Worst O(N + M)
+            where N is the number of nodes in root and M is the number of nodes in sub root
+        """
         res = self.dfs(root, subRoot)
         return res
     
