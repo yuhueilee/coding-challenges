@@ -33,9 +33,11 @@ class Solution:
                 min_int = 1
             # Gap found
             elif curr - prev > 1:
+                # Both are positive and has a difference more than 1
                 if curr > 0 and prev > 0:
                     found = True 
                     min_int = prev + 1
+                # Only curr is positive and more than 1
                 elif curr > 1 and prev <= 0:
                     found = True
                     min_int = 1
@@ -43,7 +45,9 @@ class Solution:
         
         # Edge case
         if not found:
+            # Check if the last element is postive
             if A[N - 1] > 0:
+                # Check if the first element is not 1
                 if A[0] > 1:
                     min_int = 1
                 else:
