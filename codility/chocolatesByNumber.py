@@ -33,6 +33,34 @@ class Solution:
 
         return n_factor
 
+    
+    def chocolatesByNumberOptimal(self, N: int, M: int) -> int:
+        """Number of chocolates that you will eat
+
+        Args:
+            N (int): a positive integer
+            M (int): a positive integer
+
+        Returns:
+            int: number of chocolates that you will eat
+        
+        Time complexity:
+            Best O(1)
+            Worst O(log(N + M))
+            where N is the input integer and M is the input integer
+
+        Space complexity:
+            Best and Worst O(1)
+        """
+        # Edge cases
+        if N % M == 0:
+            return N // M
+        elif N % M == 1:
+            return N
+        # Find the least common multiple
+        lcm = (N * M) // self.gcd(N, M)
+
+        return lcm // M
 
     def gcd(self, a: int, b: int) -> int:
         """Find the greatest common divisor between integers a and b
@@ -60,4 +88,4 @@ class Solution:
 
 
 sol = Solution()
-print(sol.chocolatesByNumber(10, 4))
+print(sol.chocolatesByNumberOptimal(10, 4))
