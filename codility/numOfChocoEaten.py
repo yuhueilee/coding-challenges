@@ -1,5 +1,5 @@
 class Solution:
-    def numOfChocoEaten(self, N: int, M: int) -> int:
+    def chocolatesByNumber(self, N: int, M: int) -> int:
         """Number of chocolates that you will eat
 
         Args:
@@ -44,4 +44,4 @@ class Solution:
 
 
 sol = Solution()
-print(sol.numOfChocoEaten(10, 4))
+print(sol.chocolatesByNumber(10, 4))
