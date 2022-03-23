@@ -12,13 +12,13 @@ class Solution:
             bool: resulting strings are identical or not
 
         Time complexity:
-            Best O(max(s, t))
-            Worst O(max(s, t))
+            Best O(s + t)
+            Worst O(s + t)
             where s and t are the input strings
 
         Space complexity:
             Best O(1) for strings containing all '#' characters
-            Worst O(max(s, t))
+            Worst O(s + t)
             where s and t are the input strings
         """
         stack_s = Stack()
