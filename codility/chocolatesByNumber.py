@@ -35,6 +35,22 @@ class Solution:
 
 
     def gcd(self, a: int, b: int) -> int:
+        """Find the greatest common divisor between integers a and b
+
+        Args:
+            a (int): a positive integer
+            b (int): a positive integer
+
+        Returns:
+            int: greatest common divisor
+
+        Time complexity:
+            Best and Worst O(a + b)
+            where a is the input integer and b is the input integer
+        
+        Space complexity:
+            Best and Worst O(1)
+        """
         if a == b:
             return a
         elif a > b:
